@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Define styles -->
+  <defs>
+    <style>
+      .box { fill: #ffffff; stroke: #2c5aa0; stroke-width: 2; }
+      .host-box { fill: #0066cc; stroke: #004080; stroke-width: 2; }
+      .vdsm-box { fill: #e8e8e8; stroke: #666666; stroke-width: 2; }
+      .vm-box { fill: #ffffff; stroke: #999999; stroke-width: 1.5; stroke-dasharray: 5,5; }
+      .storage-cylinder { fill: #cccccc; stroke: #666666; stroke-width: 2; }
+      .storage-base { fill: #d9d9d9; stroke: #666666; stroke-width: 2; }
+      .manager-box { fill: #f5f5f5; stroke: #333333; stroke-width: 2; }
+      .text-title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333333; }
+      .text-label { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333333; }
+      .text-label-white { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #ffffff; }
+      .text-vm { font-family: Arial, sans-serif; font-size: 14px; fill: #666666; }
+      .connection-line { stroke: #2c5aa0; stroke-width: 2; fill: none; }
+    </style>
+    
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2c5aa0" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" class="text-title">Standalone Manager Red Hat Virtualization Architecture</text>
+  
+  <!-- Manager -->
+  <rect x="520" y="80" width="160" height="100" class="manager-box" rx="5"/>
+  <rect x="550" y="90" width="100" height="70" fill="#ffffff" stroke="#666666" stroke-width="1.5" rx="3"/>
+  <line x1="560" y1="100" x2="590" y2="130" stroke="#999999" stroke-width="1.5"/>
+  <text x="600" y="195" text-anchor="middle" class="text-label">Manager</text>
+  
+  <!-- Container box -->
+  <rect x="50" y="250" width="1100" height="280" fill="none" stroke="#2c5aa0" stroke-width="3" rx="5"/>
+  
+  <!-- HOST 1 -->
+  <g id="host1">
+    <!-- VDSM Layer -->
+    <rect x="80" y="270" width="450" height="100" class="vdsm-box" rx="5"/>
+    <text x="120" y="295" class="text-label">VDSM</text>
+    
+    <!-- Virtual Machines -->
+    <rect x="240" y="285" width="80" height="70" class="vm-box" rx="3"/>
+    <text x="280" y="325" text-anchor="middle" class="text-vm">1</text>
+    
+    <rect x="335" y="285" width="80" height="70" class="vm-box" rx="3"/>
+    <text x="375" y="325" text-anchor="middle" class="text-vm">2</text>
+    
+    <text x="450" y="335" text-anchor="middle" class="text-vm" font-style="italic">Virtual machines</text>
+    
+    <!-- Host 1 Box -->
+    <rect x="80" y="380" width="450" height="80" class="host-box" rx="5"/>
+    <text x="305" y="430" text-anchor="middle" class="text-label-white">HOST 1</text>
+  </g>
+  
+  <!-- HOST 2 -->
+  <g id="host2">
+    <!-- VDSM Layer -->
+    <rect x="670" y="270" width="450" height="100" class="vdsm-box" rx="5"/>
+    <text x="710" y="295" class="text-label">VDSM</text>
+    
+    <!-- Virtual Machines -->
+    <rect x="830" y="285" width="80" height="70" class="vm-box" rx="3"/>
+    <text x="870" y="325" text-anchor="middle" class="text-vm">3</text>
+    
+    <rect x="925" y="285" width="80" height="70" class="vm-box" rx="3"/>
+    <text x="965" y="325" text-anchor="middle" class="text-vm">4</text>
+    
+    <text x="1040" y="335" text-anchor="middle" class="text-vm" font-style="italic">Virtual machines</text>
+    
+    <!-- Host 2 Box -->
+    <rect x="670" y="380" width="450" height="80" class="host-box" rx="5"/>
+    <text x="895" y="430" text-anchor="middle" class="text-label-white">HOST 2</text>
+  </g>
+  
+  <!-- Shared Storage -->
+  <rect x="50" y="560" width="1100" height="200" fill="#e0e0e0" stroke="#666666" stroke-width="2" rx="5"/>
+  
+  <!-- Storage cylinders -->
+  <g id="storage-cylinders">
+    <!-- Cylinder 1 -->
+    <ellipse cx="180" cy="650" rx="45" ry="15" class="storage-cylinder"/>
+    <rect x="135" y="650" width="90" height="80" class="storage-cylinder"/>
+    <ellipse cx="180" cy="730" rx="45" ry="15" class="storage-base"/>
+    
+    <!-- Cylinder 2 -->
+    <ellipse cx="330" cy="650" rx="45" ry="15" class="storage-cylinder"/>
+    <rect x="285" y="650" width="90" height="80" class="storage-cylinder"/>
+    <ellipse cx="330" cy="730" rx="45" ry="15" class="storage-base"/>
+    
+    <!-- Cylinder 3 -->
+    <ellipse cx="480" cy="650" rx="45" ry="15" class="storage-cylinder"/>
+    <rect x="435" y="650" width="90" height="80" class="storage-cylinder"/>
+    <ellipse cx="480" cy="730" rx="45" ry="15" class="storage-base"/>
+    
+    <!-- Cylinder 4 -->
+    <ellipse cx="720" cy="650" rx="45" ry="15" class="storage-cylinder"/>
+    <rect x="675" y="650" width="90" height="80" class="storage-cylinder"/>
+    <ellipse cx="720" cy="730" rx="45" ry="15" class="storage-base"/>
+    
+    <!-- Cylinder 5 -->
+    <ellipse cx="870" cy="650" rx="45" ry="15" class="storage-cylinder"/>
+    <rect x="825" y="650" width="90" height="80" class="storage-cylinder"/>
+    <ellipse cx="870" cy="730" rx="45" ry="15" class="storage-base"/>
+    
+    <!-- Cylinder 6 -->
+    <ellipse cx="1020" cy="650" rx="45" ry="15" class="storage-cylinder"/>
+    <rect x="975" y="650" width="90" height="80" class="storage-cylinder"/>
+    <ellipse cx="1020" cy="730" rx="45" ry="15" class="storage-base"/>
+  </g>
+  
+  <text x="600" y="600" text-anchor="middle" class="text-label">Shared Storage</text>
+  
+  <!-- Connection lines -->
+  <!-- Manager to Host 1 -->
+  <path d="M 520 130 L 305 270" class="connection-line" marker-end="url(#arrowhead)"/>
+  
+  <!-- Manager to Host 2 -->
+  <path d="M 680 130 L 895 270" class="connection-line" marker-end="url(#arrowhead)"/>
+  
+  <!-- Host 1 to Storage -->
+  <path d="M 305 460 L 480 560" class="connection-line" marker-end="url(#arrowhead)"/>
+  
+  <!-- Host 2 to Storage -->
+  <path d="M 895 460 L 720 560" class="connection-line" marker-end="url(#arrowhead)"/>
+</svg>
