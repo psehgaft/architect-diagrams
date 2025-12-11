@@ -1,0 +1,17 @@
+# System
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Node / Python / other common
+node_modules/
+dist/
+build/
+
+# Generated exports (uncomment if you prefer not to version exports)
+# diagrams/**/exports/*.png
+# diagrams/**/exports/*.svg
