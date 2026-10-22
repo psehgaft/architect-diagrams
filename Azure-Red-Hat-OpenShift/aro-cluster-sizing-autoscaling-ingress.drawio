@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-22T14:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="aro-sizing,-autoscaling,-and-i" name="ARO sizing, autoscaling, and i">
+    <mxGraphModel dx="1550" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1550" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="&lt;b&gt;ARO sizing, autoscaling, and ingress&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=26;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="35" y="15" width="1480" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Maps section 8: environment-specific sizing, three-zone worker scale groups, and private ingress/API. Confirm SKU and quota before provisioning." style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#605E5C;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="38" y="58" width="1474" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="ARO production cluster" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F7FD;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="145" width="920" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Environment sizing inputs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F9FC;strokeColor=#8A8886;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="145" width="500" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="&lt;b&gt;Control plane&lt;/b&gt;&lt;br&gt;3 managed control-plane nodes&lt;br&gt;VM SKU: confirm supported ARO size&lt;br&gt;Not autoscaled by worker ClusterAutoscaler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="205" width="300" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="&lt;b&gt;ClusterAutoscaler&lt;/b&gt;&lt;br&gt;autoscaling.openshift.io/v1&lt;br&gt;maxNodesTotal: 12 (input value)&lt;br&gt;Set min/max and scale-down policy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="405" y="205" width="270" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="&lt;b&gt;IngressController/default&lt;/b&gt;&lt;br&gt;LoadBalancerService&lt;br&gt;scope: Internal&lt;br&gt;Private routes only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="700" y="205" width="225" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;b&gt;MachineSet 1&lt;/b&gt;&lt;br&gt;Availability Zone 1&lt;br&gt;Worker replicas: min … max" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="85" y="405" width="250" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;MachineAutoscaler 1&lt;/b&gt;&lt;br&gt;targets MachineSet 1&lt;br&gt;minReplicas / maxReplicas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="85" y="555" width="250" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="scale decision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="7" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="bounds" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="10" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;MachineSet 2&lt;/b&gt;&lt;br&gt;Availability Zone 2&lt;br&gt;Worker replicas: min … max" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="390" y="405" width="250" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;MachineAutoscaler 2&lt;/b&gt;&lt;br&gt;targets MachineSet 2&lt;br&gt;minReplicas / maxReplicas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="390" y="555" width="250" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="scale decision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="7" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="bounds" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="14" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="&lt;b&gt;MachineSet 3&lt;/b&gt;&lt;br&gt;Availability Zone 3&lt;br&gt;Worker replicas: min … max" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="695" y="405" width="250" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="&lt;b&gt;MachineAutoscaler 3&lt;/b&gt;&lt;br&gt;targets MachineSet 3&lt;br&gt;minReplicas / maxReplicas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="695" y="555" width="250" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="scale decision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="7" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="bounds" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="18" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;b&gt;Worker pool&lt;/b&gt;&lt;br&gt;VM size and disk config shared per pool&lt;br&gt;Scale across zones; preserve minimum per zone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF4FC;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="680" width="330" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="9" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="13" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="17" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="&lt;b&gt;Dev candidate&lt;/b&gt;&lt;br&gt;Standard_D8s_v3 workers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="215" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="&lt;b&gt;Prod candidate&lt;/b&gt;&lt;br&gt;Standard_D16s_v3 workers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="215" width="205" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="These VM sizes are inputs from the source document, not a compatibility approval. Confirm current ARO supported SKUs, Azure regional quota, and three-zone availability." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#D6A800;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="300" width="435" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="&lt;b&gt;Private API endpoint&lt;/b&gt;&lt;br&gt;TCP 6443 reachable only from connected networks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="435" width="430" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="&lt;b&gt;Internal DNS&lt;/b&gt;&lt;br&gt;Resolves API and apps records to private frontends" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="555" width="430" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="private route DNS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="8" target="29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="private API DNS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="29" target="28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="&lt;b&gt;Operational gate&lt;/b&gt;&lt;br&gt;Only onboard workloads after nodes Ready, operators Available, autoscalers healthy, and private route/API probes pass." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#D6A800;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="680" width="500" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
