@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-22T14:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="aro-and-eks-active/passive-pla" name="ARO and EKS active/passive pla">
+    <mxGraphModel dx="1550" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1550" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="&lt;b&gt;ARO and EKS active/passive platform&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=26;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="35" y="15" width="1480" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Conceptual production topology for sections 1, 2, 4, 6, 16, and 18. Routing, data replication, and failover controls remain design decisions." style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#605E5C;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="38" y="58" width="1474" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Shared delivery and control plane" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F9FC;strokeColor=#8A8886;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="125" width="330" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Azure primary — ACTIVE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F7FD;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="410" y="125" width="520" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="AWS secondary — WARM STANDBY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8F1;strokeColor=#E67600;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="970" y="125" width="530" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="&lt;b&gt;Source repositories&lt;/b&gt;&lt;br&gt;CDKTF / Terraform&lt;br&gt;Application + Kustomize overlays" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="205" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="&lt;b&gt;GitHub Actions&lt;/b&gt;&lt;br&gt;IaC validation / plan / approved apply&lt;br&gt;OIDC federation to cloud" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="355" width="250" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;b&gt;Argo CD&lt;/b&gt;&lt;br&gt;Desired state reconciliation&lt;br&gt;Project and destination policy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E34B7B;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="515" width="250" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="" style="image;aspect=fixed;html=1;align=center;verticalAlign=middle;image=img/lib/azure2/containers/Azure_Red_Hat_OpenShift.svg;" vertex="1" parent="1">
+          <mxGeometry x="435" y="175" width="52" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;Azure Red Hat OpenShift&lt;/b&gt;&lt;br&gt;Private API + private ingress&lt;br&gt;Production workloads" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="495" y="165" width="390" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="" style="image;aspect=fixed;html=1;align=center;verticalAlign=middle;image=img/lib/azure2/networking/Virtual_Networks.svg;" vertex="1" parent="1">
+          <mxGeometry x="435" y="315" width="52" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;Hub / spoke network&lt;/b&gt;&lt;br&gt;UDR → Azure Firewall&lt;br&gt;Private endpoints and DNS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="495" y="305" width="390" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;Primary data services&lt;/b&gt;&lt;br&gt;Private PaaS endpoints&lt;br&gt;Replication mechanism: TBD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="495" y="465" width="390" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;b&gt;Active application services&lt;/b&gt;&lt;br&gt;App replicas and health signals" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="495" y="610" width="390" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="&lt;b&gt;Amazon EKS&lt;/b&gt;&lt;br&gt;Warm standby cluster&lt;br&gt;Capacity / versions / access: TBD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E67600;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="165" width="390" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="&lt;b&gt;AWS network and private dependencies&lt;/b&gt;&lt;br&gt;VPC, endpoints, routes, DNS: TBD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E67600;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="315" width="390" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="&lt;b&gt;Standby data services&lt;/b&gt;&lt;br&gt;Replication and recovery point: TBD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E67600;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="465" width="390" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="&lt;b&gt;Standby application services&lt;/b&gt;&lt;br&gt;Scaled / activated on failover" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E67600;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="610" width="390" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="&lt;b&gt;Health-based traffic steering&lt;/b&gt;&lt;br&gt;DNS / global routing provider and TTL: TBD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#D6A800;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="605" y="755" width="620" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;b&gt;Recovery objectives from source document&lt;/b&gt;&lt;br&gt;RTO 2–4 hours  |  RPO 15–30 minutes  |  Validate with tested failover and data replication" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#D6A800;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="755" width="510" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="PR / merge" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="7" target="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="validated release" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="reconcile" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="9" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="reconcile / promote" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="9" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="replication design required" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#D6A800;strokeWidth=2;endArrow=block;endFill=1;dashed=1;dashPattern=6 4;startArrow=block;startFill=1;" edge="1" parent="1" source="14" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="health" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="11" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="activate on failover" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="16" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="failover; no synchronous write path assumed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;dashed=1;dashPattern=6 4;startArrow=block;startFill=1;" edge="1" parent="1" source="15" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
