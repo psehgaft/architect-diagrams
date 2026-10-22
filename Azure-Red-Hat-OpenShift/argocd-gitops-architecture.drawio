@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-22T14:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="argo-cd-gitops-architecture" name="Argo CD GitOps architecture">
+    <mxGraphModel dx="1550" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1550" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="&lt;b&gt;Argo CD GitOps architecture&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=26;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="35" y="15" width="1480" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Maps sections 10 and 12: an AppProject constrains repository/destinations, ApplicationSets generate applications, and Kustomize separates environments." style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#605E5C;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="38" y="58" width="1474" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="GitOps repository" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F9FC;strokeColor=#8A8886;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="45" y="150" width="370" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Argo CD control plane" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF5FA;strokeColor=#E34B7B;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="470" y="150" width="400" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Target clusters" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F7FD;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="925" y="150" width="575" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="&lt;b&gt;argocd-gitops&lt;/b&gt;&lt;br&gt;apps/&lt;br&gt;base/&lt;br&gt;overlays/dev/&lt;br&gt;overlays/prod/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="95" y="235" width="270" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="&lt;b&gt;Reviewed Git commit&lt;/b&gt;&lt;br&gt;PR checks, CODEOWNERS, branch protection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="95" y="465" width="270" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;b&gt;AppProject&lt;/b&gt;&lt;br&gt;sourceRepos: approved GitOps URL&lt;br&gt;destinations: explicit clusters/namespaces&lt;br&gt;RBAC roles: least privilege" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E34B7B;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="205" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;ApplicationSet&lt;/b&gt;&lt;br&gt;Git directory/file generator&lt;br&gt;Creates one Application per service / overlay" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E34B7B;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="385" width="320" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;Application controller&lt;/b&gt;&lt;br&gt;Diff → sync → health status&lt;br&gt;Drift correction per sync policy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E34B7B;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="550" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;b&gt;Dev cluster&lt;/b&gt;&lt;br&gt;ARO or EKS target&lt;br&gt;dev namespace(s)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="975" y="250" width="205" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;Prod cluster&lt;/b&gt;&lt;br&gt;ARO active / EKS standby&lt;br&gt;prod namespace(s)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1235" y="250" width="220" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;Microservice Applications&lt;/b&gt;&lt;br&gt;Dev overlay" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="975" y="440" width="205" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;b&gt;Microservice Applications&lt;/b&gt;&lt;br&gt;Prod overlay" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1235" y="440" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="&lt;b&gt;Trust boundary&lt;/b&gt;&lt;br&gt;Argo CD service account permissions must be scoped to approved resource kinds, namespaces, and destination clusters." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#D6A800;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="940" y="585" width="520" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="repo URL / policy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="7" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="manifest paths" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="7" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="merge" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="8" target="7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="constrains" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="generated Applications" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="sync" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="11" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="promotion after approval" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="11" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="12" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="13" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
