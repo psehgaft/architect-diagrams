@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-22T15:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="eks-multi-az-deployment-baseline" name="EKS multi-AZ deployment baseli">
+    <mxGraphModel dx="1600" dy="980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="980" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="&lt;b&gt;EKS multi-AZ deployment baseline&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=25;fontColor=#232F3E;align=left;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="32" y="12" width="1536" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Single-region baseline: regional managed control plane and worker capacity in three Availability Zones. Resilience requires application and data-layer configuration too." style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#545B64;align=left;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="35" y="54" width="1530" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Customer VPC — worker/data plane and public ingress subnets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F8FC;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=15;fontColor=#232F3E;align=left;verticalAlign=middle;spacing=7;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="35" y="235" width="1530" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="&lt;b&gt;Amazon EKS managed control plane&lt;/b&gt;&lt;br&gt;Regional control plane distributed across multiple AZs by AWS; not hosted in the customer VPC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="485" y="125" width="600" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Availability Zone A" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#879196;strokeWidth=1.5;fontFamily=Arial;fontSize=15;fontColor=#232F3E;align=left;verticalAlign=middle;spacing=7;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="80" y="370" width="440" height="325" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Availability Zone B" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#879196;strokeWidth=1.5;fontFamily=Arial;fontSize=15;fontColor=#232F3E;align=left;verticalAlign=middle;spacing=7;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="370" width="440" height="325" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Availability Zone C" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#879196;strokeWidth=1.5;fontFamily=Arial;fontSize=15;fontColor=#232F3E;align=left;verticalAlign=middle;spacing=7;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="370" width="440" height="325" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;b&gt;Public subnet&lt;/b&gt;&lt;br&gt;ALB ENI / NAT Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D86613;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="105" y="410" width="185" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;Private app subnet&lt;/b&gt;&lt;br&gt;CPU node group / ICA pods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="105" y="500" width="185" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;Private GPU capacity&lt;/b&gt;&lt;br&gt;GPU nodes when enabled" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="325" y="500" width="185" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;b&gt;Private data subnet&lt;/b&gt;&lt;br&gt;Aurora / cache / EFS mount target" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D86613;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="105" y="605" width="405" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Topology spread across zones&lt;br&gt;plus replicas / PDBs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=11;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="325" y="410" width="185" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;Public subnet&lt;/b&gt;&lt;br&gt;ALB ENI / NAT Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D86613;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="605" y="410" width="185" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;b&gt;Private app subnet&lt;/b&gt;&lt;br&gt;CPU node group / ICA pods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="605" y="500" width="185" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="&lt;b&gt;Private GPU capacity&lt;/b&gt;&lt;br&gt;GPU nodes when enabled" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="825" y="500" width="185" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="&lt;b&gt;Private data subnet&lt;/b&gt;&lt;br&gt;Aurora / cache / EFS mount target" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D86613;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="605" y="605" width="405" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Topology spread across zones&lt;br&gt;plus replicas / PDBs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=11;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="825" y="410" width="185" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="&lt;b&gt;Public subnet&lt;/b&gt;&lt;br&gt;ALB ENI / NAT Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D86613;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1105" y="410" width="185" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="&lt;b&gt;Private app subnet&lt;/b&gt;&lt;br&gt;CPU node group / ICA pods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1105" y="500" width="185" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;b&gt;Private GPU capacity&lt;/b&gt;&lt;br&gt;GPU nodes when enabled" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1325" y="500" width="185" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="&lt;b&gt;Private data subnet&lt;/b&gt;&lt;br&gt;Aurora / cache / EFS mount target" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D86613;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1105" y="605" width="405" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="Topology spread across zones&lt;br&gt;plus replicas / PDBs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=11;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1325" y="410" width="185" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="shape=mxgraph.aws4.application_load_balancer;html=1;aspect=fixed;align=center;verticalAlign=middle;fillColor=#232F3E;strokeColor=none;fontColor=#232F3E;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="55" y="270" width="42" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="&lt;b&gt;Application Load Balancer&lt;/b&gt;&lt;br&gt;spans public subnets in AZs A, B, and C" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D86613;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="110" y="263" width="290" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="&lt;b&gt;VPC endpoints&lt;/b&gt;&lt;br&gt;Bedrock interface · S3 gateway · ECR / STS as needed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3F8624;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1185" y="270" width="330" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="&lt;b&gt;Private-by-default routing&lt;/b&gt;&lt;br&gt;Internet ingress only through approved ALB / API entry points&lt;br&gt;Private workloads use VPC endpoints; controlled NAT egress only if required" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#D86613;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="370" y="770" width="830" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="target groups" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="25" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="target groups" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="25" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="target groups" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="25" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="managed API / node connectivity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="5" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="5" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="5" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="schedule replicas" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="10" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="15" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="20" target="23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="service calls" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="10" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="15" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="20" target="22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="private AWS APIs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="10" target="26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="15" target="26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="20" target="26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
