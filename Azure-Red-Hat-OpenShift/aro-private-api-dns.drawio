@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-22T14:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="private-api-dns-and-hub-connec" name="Private API DNS and hub connec">
+    <mxGraphModel dx="1550" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1550" pageHeight="820" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="&lt;b&gt;Private API DNS and hub connectivity&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=26;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="35" y="15" width="1480" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Maps the private API DNS design in section 9. Validate the actual ARO DNS zone, record ownership, and supported VNet-link workflow before automating it." style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#605E5C;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="38" y="58" width="1474" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Hub network / enterprise DNS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F9FC;strokeColor=#8A8886;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="45" y="150" width="390" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="ARO private cluster network" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F7FD;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="500" y="150" width="480" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Azure Private DNS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F9FC;strokeColor=#8A8886;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="150" width="450" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="&lt;b&gt;Admin workstation / runner&lt;/b&gt;&lt;br&gt;Connected by VPN or ExpressRoute" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="95" y="245" width="285" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="&lt;b&gt;DNS forwarding&lt;/b&gt;&lt;br&gt;Conditional forwarding / Azure DNS Private Resolver&lt;br&gt;Design choice: TBD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="95" y="410" width="285" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;b&gt;ARO VNet&lt;/b&gt;&lt;br&gt;Control-plane subnet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="560" y="230" width="360" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;Private API frontend&lt;/b&gt;&lt;br&gt;api.&amp;lt;cluster&amp;gt;.&amp;lt;region&amp;gt;.aroapp.io → private IP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="560" y="390" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;Private DNS zone&lt;/b&gt;&lt;br&gt;ARO RP/service-managed or customer-managed?&lt;br&gt;Confirm ownership and permissions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="240" width="370" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;b&gt;A record: api&lt;/b&gt;&lt;br&gt;Private address for API endpoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="400" width="370" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;VNet link&lt;/b&gt;&lt;br&gt;Hub VNet resolution scope&lt;br&gt;Creation method and owner: validate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6A800;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="540" width="370" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="DNS query" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="7" target="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="forward / resolve" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="8" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="A record" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="12" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="route to API" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="10" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="links zone" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="13" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="private route" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="8" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="The input document labels this DNS-link topic under “AWS Architecture”, but the supplied Terraform resource is Azure Private DNS. Move this material to the Azure / ARO networking section unless the HLD defines a separate AWS DNS integration." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#D6A800;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="45" y="700" width="1445" height="65" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
