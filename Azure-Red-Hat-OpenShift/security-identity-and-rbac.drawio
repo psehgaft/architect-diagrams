@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-22T14:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="identity,-rbac,-and-workload-s" name="Identity, RBAC, and workload s">
+    <mxGraphModel dx="1550" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1550" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="&lt;b&gt;Identity, RBAC, and workload security&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=26;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="35" y="15" width="1480" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Maps sections 3, 5, and 15: human identity, least-privilege cluster access, workload identity, and private service access." style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#605E5C;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="38" y="58" width="1474" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Identity sources and federation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F9FC;strokeColor=#8A8886;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="45" y="155" width="410" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="ARO trust and access" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F7FD;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="510" y="155" width="480" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Namespaced workloads and dependencies" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F9FC;strokeColor=#8A8886;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;dashed=1;dashPattern=6 4;spacingLeft=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1045" y="155" width="455" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="&lt;b&gt;Microsoft Entra ID&lt;/b&gt;&lt;br&gt;Human groups / MFA / lifecycle&lt;br&gt;Group object ID: parameter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="95" y="230" width="300" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="&lt;b&gt;GitHub Actions OIDC&lt;/b&gt;&lt;br&gt;Workload federation to Azure&lt;br&gt;Subject restricted to repo / branch / workflow" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="95" y="400" width="300" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;b&gt;OpenShift OAuth / OIDC&lt;/b&gt;&lt;br&gt;Authentication provider configuration&lt;br&gt;Map Entra group claims" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="565" y="230" width="370" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;OpenShift groups&lt;/b&gt;&lt;br&gt;Entra group → OpenShift Group" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="565" y="365" width="370" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;RoleBinding&lt;/b&gt;&lt;br&gt;openshift-developers → edit&lt;br&gt;namespace-scoped only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6A800;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="565" y="495" width="370" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;b&gt;Workload Identity&lt;/b&gt;&lt;br&gt;Service account + federated identity&lt;br&gt;scoped cloud roles" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B5FC7;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="235" width="350" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;Application namespace&lt;/b&gt;&lt;br&gt;Use team-specific namespace&lt;br&gt;Quota + LimitRange + NetworkPolicy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="385" width="350" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;Private dependencies&lt;/b&gt;&lt;br&gt;Key Vault / PostgreSQL / ACR&lt;br&gt;Private endpoints + least-privilege roles" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#323130;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="540" width="350" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Use a dedicated workload namespace such as openshift-apps or team-&lt;name&gt;; do not create tenant workloads in the reserved platform namespace named openshift. Grant edit only to the target namespace and prefer a read-only role for routine access." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#D6A800;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#323130;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="45" y="755" width="1455" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="user authentication" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="7" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="claims / group mapping" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="subject" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="scoped permissions" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="11" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="federated token" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="8" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="authorized access" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="12" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="private endpoint" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#737373;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
