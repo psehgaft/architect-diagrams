@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-22T15:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="ica-ai-integration-request-flow" name="ICA AI integration request flo">
+    <mxGraphModel dx="1550" dy="840" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1550" pageHeight="840" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="&lt;b&gt;ICA AI integration request flow&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=25;fontColor=#232F3E;align=left;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="32" y="12" width="1486" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Section 6.4: decouple ICA services from inference providers, with Amazon Bedrock as the managed default and optional SageMaker / EKS GPU inference." style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontFamily=Arial;fontSize=13;fontColor=#545B64;align=left;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="35" y="54" width="1480" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Request path" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F8FC;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=15;fontColor=#232F3E;align=left;verticalAlign=middle;spacing=7;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="45" y="140" width="1020" height="570" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Inference providers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4F8F4;strokeColor=#3F8624;strokeWidth=1.5;fontFamily=Arial;fontSize=15;fontColor=#232F3E;align=left;verticalAlign=middle;spacing=7;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="140" width="400" height="570" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="&lt;b&gt;User / client&lt;/b&gt;&lt;br&gt;HTTPS request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#879196;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="80" y="250" width="180" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="&lt;b&gt;ALB / API Gateway&lt;/b&gt;&lt;br&gt;Ingress and auth integration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D86613;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="330" y="250" width="200" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="&lt;b&gt;ICA Core&lt;/b&gt;&lt;br&gt;API / business flow" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="610" y="250" width="200" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;b&gt;Assistants&lt;/b&gt;&lt;br&gt;Prompt / tool orchestration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="850" y="225" width="175" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;Agentic Applications&lt;/b&gt;&lt;br&gt;Workflows / tool calls" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="850" y="375" width="175" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;Context services&lt;/b&gt;&lt;br&gt;Retrieval / policy / context assembly" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="600" y="460" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;b&gt;Scribeflow&lt;/b&gt;&lt;br&gt;Document workflow" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="330" y="460" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;html=1;aspect=fixed;align=center;verticalAlign=middle;fillColor=#232F3E;strokeColor=none;fontColor=#232F3E;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="205" width="48" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;Amazon Bedrock&lt;/b&gt;&lt;br&gt;Managed foundation model inference" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3F8624;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="195" width="260" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker_2;html=1;aspect=fixed;align=center;verticalAlign=middle;fillColor=#232F3E;strokeColor=none;fontColor=#232F3E;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="330" width="48" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="&lt;b&gt;SageMaker&lt;/b&gt;&lt;br&gt;Optional custom model endpoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3F8624;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="320" width="260" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;html=1;aspect=fixed;align=center;verticalAlign=middle;fillColor=#232F3E;strokeColor=none;fontColor=#232F3E;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="455" width="48" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="&lt;b&gt;EKS GPU node pool&lt;/b&gt;&lt;br&gt;Optional self-hosted model serving" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontFamily=Arial;fontSize=14;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="445" width="260" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="&lt;b&gt;Data layer&lt;/b&gt;&lt;br&gt;Aurora / RDS · S3 · EFS · ElastiCache&lt;br&gt;SQS / SNS / EventBridge as needed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D86613;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=center;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="530" y="600" width="420" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="&lt;b&gt;Secure transport&lt;/b&gt;&lt;br&gt;HTTPS + IAM authorization; use Bedrock VPC interface endpoint for private VPC-to-Bedrock API traffic. Model access, data policy, retention, and guardrails are separate design controls." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#D86613;strokeWidth=1.5;fontFamily=Arial;fontSize=12;fontColor=#232F3E;align=left;verticalAlign=middle;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="585" width="410" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="6" target="7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="7" target="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="agentic handoff" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="context request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="9" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="retrieve / persist" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="11" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="read / write" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="12" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="inference" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="9" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="inference / tools" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="10" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="optional" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="10" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="optional" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#687078;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="10" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
